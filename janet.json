@@ -1,0 +1,16 @@
+{
+    "homepage": "https://janet-lang.org",
+    "description": "Janet is a functional and imperative programming language. It runs on Windows, Linux, macOS, and many other systems.",
+    "license": {
+        "identifier": "MIT"
+    },
+    "version": "v0.4.0",
+    "url": "https://github.com/janet-lang/janet/releases/download/v0.4.0/janet-windows.zip",
+    "checkver": {
+        "github": "https://github.com/janet-lang/janet"
+    },
+    "bin": "janet.exe",
+    "autoupdate": {
+        "url": "https://github.com/janet-lang/janet/releases/download/$version/janet-windows.zip"
+    }
+}
