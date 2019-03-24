@@ -6,6 +6,7 @@
     },
     "version": "v0.4.0",
     "url": "https://github.com/janet-lang/janet/releases/download/v0.4.0/janet-windows.zip",
+    "hash": "sha256:e4d42e2da9d825c5ead665a83f54a5c4f5f0a58984bbb7728bbd21e155af076b",
     "checkver": {
         "github": "https://github.com/janet-lang/janet"
     },
