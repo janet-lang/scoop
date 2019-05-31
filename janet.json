@@ -4,6 +4,7 @@
     "license": {
         "identifier": "MIT"
     },
+    "hash": "15adf67dc349de8c0cc890e0d969c10852bb949382aa88de95d8a8b338fcd281",
     "version": "v0.6.0",
     "url": "https://github.com/janet-lang/janet/releases/download/v0.6.0/janet-v0.6.0-windows.zip",
     "checkver": {
@@ -11,23 +12,25 @@
     },
     "bin": [
         "janet.exe",
+        ["janet.exe", "jpm", "jpm"]
     ],
-    "env_add_path": "$dir\\bin",
-    "env_set": [
-        "JANET_BINPATH": "$dir\\bin",
-        "JANET_PATH": "$dir\\Library",
-        "JANET_HEADERPATH": "$dir\\C"
-    ],
+    "env_set": {
+        "JANET_BINPATH": "$persist_dir\\bin",
+        "JANET_PATH": "$persist_dir\\Library",
+        "JANET_HEADERPATH": "$persist_dir\\C"
+    },
+    "installer": {
+        "script": "add_first_in_path \"$persist_dir\\bin\" $global"
+    },
+    "uninstaller": {
+        "script": "remove_from_path \"$persist_dir\\bin\" $global"
+    },
     "persist": [
         ["janet.lib", "C\\janet.lib"],
         ["janet.h", "C\\janet.h"],
         ["janetconf.h", "C\\janetconf.h"],
         ["janet.exp", "C\\janet.exp"],
         ["cook.janet", "Library\\cook.janet"],
-        ["jpm", "bin\\jpm"],
-        ["jpm.bat", "bin\\jpm.bat"]
-    ],
-    "autoupdate": {
-        "url": "https://github.com/janet-lang/janet/releases/download/$version/janet-$version-windows.zip"
-    }
+        ["jpm", "Library\\jpm.janet"]
+    ]
 }
