@@ -4,14 +4,30 @@
     "license": {
         "identifier": "MIT"
     },
-    "version": "v0.4.0",
-    "url": "https://github.com/janet-lang/janet/releases/download/v0.4.0/janet-windows.zip",
-    "hash": "sha256:e4d42e2da9d825c5ead665a83f54a5c4f5f0a58984bbb7728bbd21e155af076b",
+    "version": "v0.6.0",
+    "url": "https://github.com/janet-lang/janet/releases/download/v0.6.0/janet-v0.6.0-windows.zip",
     "checkver": {
         "github": "https://github.com/janet-lang/janet"
     },
-    "bin": "janet.exe",
+    "bin": [
+        "janet.exe",
+    ],
+    "env_add_path": "$dir\\bin",
+    "env_set": [
+        "JANET_BINPATH": "$dir\\bin",
+        "JANET_PATH": "$dir\\Library",
+        "JANET_HEADERPATH": "$dir\\C"
+    ],
+    "persist": [
+        ["janet.lib", "C\\janet.lib"],
+        ["janet.h", "C\\janet.h"],
+        ["janetconf.h", "C\\janetconf.h"],
+        ["janet.exp", "C\\janet.exp"],
+        ["cook.janet", "Library\\cook.janet"],
+        ["jpm", "bin\\jpm"],
+        ["jpm.bat", "bin\\jpm.bat"]
+    ],
     "autoupdate": {
-        "url": "https://github.com/janet-lang/janet/releases/download/$version/janet-windows.zip"
+        "url": "https://github.com/janet-lang/janet/releases/download/$version/janet-$version-windows.zip"
     }
 }
