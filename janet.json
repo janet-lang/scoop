@@ -4,15 +4,15 @@
     "license": {
         "identifier": "MIT"
     },
-    "hash": "15adf67dc349de8c0cc890e0d969c10852bb949382aa88de95d8a8b338fcd281",
-    "version": "v0.6.0",
-    "url": "https://github.com/janet-lang/janet/releases/download/v0.6.0/janet-v0.6.0-windows.zip",
+    "hash": "a416bebdfcf9122446ac612935f80d8afd4d441941d9bc8de002e4008840f2bc",
+    "version": "v1.1.0",
+    "url": "https://github.com/janet-lang/janet/releases/download/v1.1.0/janet-v1.1.0-windows.zip",
     "checkver": {
         "github": "https://github.com/janet-lang/janet"
     },
     "bin": [
         "janet.exe",
-        ["janet.exe", "jpm", "jpm"]
+        ["janet.exe", "jpm", "$persist_dir\\Library\\jpm.janet"]
     ],
     "env_set": {
         "JANET_BINPATH": "$persist_dir\\bin",
@@ -31,6 +31,7 @@
         ["janetconf.h", "C\\janetconf.h"],
         ["janet.exp", "C\\janet.exp"],
         ["cook.janet", "Library\\cook.janet"],
+        ["path.janet", "Library\\path.janet"],
         ["jpm", "Library\\jpm.janet"]
     ]
 }
