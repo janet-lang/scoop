@@ -1,37 +1,29 @@
 {
     "homepage": "https://janet-lang.org",
     "description": "Janet is a functional and imperative programming language. It runs on Windows, Linux, macOS, and many other systems.",
+    "hash": "7720ee786fe1f779b06d51b6764a1b579e9e40cddd5562f7d5f8ffd5e90a6fc5",
     "license": {
         "identifier": "MIT"
     },
-    "hash": "a416bebdfcf9122446ac612935f80d8afd4d441941d9bc8de002e4008840f2bc",
-    "version": "v1.1.0",
-    "url": "https://github.com/janet-lang/janet/releases/download/v1.1.0/janet-v1.1.0-windows.zip",
+    "version": "v1.2.0",
+    "url": "https://github.com/janet-lang/janet/releases/download/v1.2.0/janet-v1.2.0-windows.zip",
     "checkver": {
         "github": "https://github.com/janet-lang/janet"
     },
     "bin": [
         "janet.exe",
-        ["janet.exe", "jpm", "$persist_dir\\Library\\jpm.janet"]
+        ["janet.exe", "jpm", "$dir\\jpm"]
     ],
     "env_set": {
-        "JANET_BINPATH": "$persist_dir\\bin",
-        "JANET_PATH": "$persist_dir\\Library",
-        "JANET_HEADERPATH": "$persist_dir\\C"
+        "JANET_BINPATH": "$dir",
+        "JANET_PATH": "$dir",
+        "JANET_HEADERPATH": "$dir",
+        "JANET_LIBPATH": "$dir"
     },
     "installer": {
-        "script": "add_first_in_path \"$persist_dir\\bin\" $global"
+        "script": "add_first_in_path \"$dir\" $global"
     },
     "uninstaller": {
-        "script": "remove_from_path \"$persist_dir\\bin\" $global"
-    },
-    "persist": [
-        ["janet.lib", "C\\janet.lib"],
-        ["janet.h", "C\\janet.h"],
-        ["janetconf.h", "C\\janetconf.h"],
-        ["janet.exp", "C\\janet.exp"],
-        ["cook.janet", "Library\\cook.janet"],
-        ["path.janet", "Library\\path.janet"],
-        ["jpm", "Library\\jpm.janet"]
-    ]
+        "script": "remove_from_path \"$dir\" $global"
+    }
 }
